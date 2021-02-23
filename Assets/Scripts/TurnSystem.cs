@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurnSystem : MonoBehaviour
 {
 
     [SerializeField] private PlayerMovment[] players;
+    [SerializeField] private int turnNumber = 0;
+    [SerializeField] private Text turnNumberText;
+
     public int currentPlayer;
 
     // Start is called before the first frame update
@@ -28,7 +32,11 @@ public class TurnSystem : MonoBehaviour
 
         currentPlayer++;
         if (currentPlayer >= players.Length)
+        {
             currentPlayer = 0;
+            turnNumber++;
+            turnNumberText.text = "Turn: " + turnNumber;
+        }
         players[currentPlayer].hasTurn = true;
         players[currentPlayer].camera.gameObject.SetActive(true);
         players[currentPlayer].fog.gameObject.SetActive(true);

@@ -48,11 +48,11 @@ public class PlayerMovment : MonoBehaviour
         {
             if(velocity.y> 0)
             {
-                direction = new Vector3(-.5f, .5f);
+                direction = new Vector3(-.5f, .75f);
             }
             else if( velocity.y < 0)
             {
-                direction = new Vector3(-.5f, -.5f);
+                direction = new Vector3(-.5f, -.75f);
             } 
             else
             {
@@ -63,11 +63,11 @@ public class PlayerMovment : MonoBehaviour
         {
             if (velocity.y > 0)
             {
-                direction = new Vector3(.5f, .5f);
+                direction = new Vector3(.5f, .75f);
             }
             else if (velocity.y < 0)
             {
-                direction = new Vector3(.5f, -.5f);
+                direction = new Vector3(.5f, -.75f);
             }
             else
             {
