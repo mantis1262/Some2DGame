@@ -10,14 +10,17 @@ public class PlayerMovment : MonoBehaviour
     private Vector2 velocity;
     private Vector3 direction;
     private bool hasMoved;
-    public int maxEnergy = 5;
-    public int currentEnergy = 5;
+   
 
     [SerializeField] private int vision = 3;
+    [SerializeField] private QuestSystem quest;
     public Tilemap fog;
     public Camera camera;
     public Text energy;
     public bool hasTurn;
+    public int maxEnergy = 5;
+    public int currentEnergy = 5;
+    public Quest currentQuest = null;
 
     private void Start()
     {
@@ -82,8 +85,21 @@ public class PlayerMovment : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "obs" )
-            transform.position -= direction;
+        switch(collision.gameObject.tag)
+        {
+            case "obs":
+                transform.position -= direction;
+                break;
+            case "city":
+                quest.SetQuestWinow(this);
+                break;
+            case "lab":
+                //
+                break;
+            default:
+                break;
+
+        }
     }
 
     private void UpdateFog()
