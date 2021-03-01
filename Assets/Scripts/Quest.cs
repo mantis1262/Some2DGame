@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Quest : MonoBehaviour
+public abstract class Quest : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string title;
+   [TextArea] public string text;
+    public GameObject reward;
+    public bool active = false;
+
+    public abstract bool CheckQuest(PlayerMovment player);
+    public abstract void CompletedQuest(PlayerMovment player);
 }

@@ -21,6 +21,7 @@ public class PlayerMovment : MonoBehaviour
     public int maxEnergy = 5;
     public int currentEnergy = 5;
     public Quest currentQuest = null;
+    public List<GameObject> backpack;
 
     private void Start()
     {
@@ -81,6 +82,11 @@ public class PlayerMovment : MonoBehaviour
         energy.text = "Energy: " + currentEnergy + "/" + maxEnergy;
         transform.position += direction;
         UpdateFog();
+        if (currentQuest != null)
+            if (currentQuest.CheckQuest(this))
+            {
+                currentQuest.CompletedQuest(this);
+            }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
