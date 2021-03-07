@@ -26,9 +26,10 @@ public class TurnSystem : MonoBehaviour
 
     public void EndTurn()
     {
-        players[currentPlayer].hasTurn = false;
-        players[currentPlayer].camera.gameObject.SetActive(false);
-        players[currentPlayer].fog.gameObject.SetActive(false);
+        PlayerMovment player = players[currentPlayer];
+        player.hasTurn = false;
+        player.camera.gameObject.SetActive(false);
+        player.fog.gameObject.SetActive(false);
 
         currentPlayer++;
         if (currentPlayer >= players.Length)
@@ -37,11 +38,15 @@ public class TurnSystem : MonoBehaviour
             turnNumber++;
             turnNumberText.text = "Turn: " + turnNumber;
         }
-        players[currentPlayer].hasTurn = true;
-        players[currentPlayer].camera.gameObject.SetActive(true);
-        players[currentPlayer].fog.gameObject.SetActive(true);
-        players[currentPlayer].currentEnergy = players[currentPlayer].maxEnergy;
-        players[currentPlayer].energy.text = "Energy: " + players[currentPlayer].currentEnergy + "/" + players[currentPlayer].maxEnergy;
+
+        player = players[currentPlayer];
+        player.hasTurn = true;
+        player.camera.gameObject.SetActive(true);
+        player.fog.gameObject.SetActive(true);
+        player.currentEnergy = players[currentPlayer].maxEnergy;
+        if (player.stun == true)
+            player.currentEnergy = 0;
+        player.energy.text = "Energy: " + player.currentEnergy + "/" + player.maxEnergy;
 
 
 

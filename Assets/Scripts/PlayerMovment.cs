@@ -14,6 +14,7 @@ public class PlayerMovment : MonoBehaviour
 
     [SerializeField] private int vision = 3;
     [SerializeField] private QuestSystem quest;
+    [SerializeField] private FightSystem fightSystem;
     public Tilemap fog;
     public Camera camera;
     public Text energy;
@@ -22,6 +23,8 @@ public class PlayerMovment : MonoBehaviour
     public int currentEnergy = 5;
     public Quest currentQuest = null;
     public List<GameObject> backpack;
+    public int strenght = 5;
+    public bool stun = false;
 
     private void Start()
     {
@@ -101,6 +104,12 @@ public class PlayerMovment : MonoBehaviour
                 break;
             case "lab":
                 //
+                break;
+            case "Player":
+               fightSystem.SetPlayesFight(this, collision.gameObject.GetComponent<PlayerMovment>());
+                break;
+            case "mob":
+                fightSystem.SetMobFight(this, collision.gameObject.GetComponent<PlayerMovment>());
                 break;
             default:
                 break;
