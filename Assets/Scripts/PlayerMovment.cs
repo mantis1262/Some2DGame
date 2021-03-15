@@ -25,6 +25,7 @@ public class PlayerMovment : MonoBehaviour
     public List<GameObject> backpack;
     public int strenght = 5;
     public bool stun = false;
+    public bool fight = false;
 
     private void Start()
     {
@@ -33,7 +34,7 @@ public class PlayerMovment : MonoBehaviour
 
     void Update()
     {
-        if (hasTurn && currentEnergy != 0)
+        if (hasTurn && currentEnergy != 0 && !fight)
         {
             if (velocity.x == 0)
             {
@@ -106,9 +107,11 @@ public class PlayerMovment : MonoBehaviour
                 //
                 break;
             case "Player":
+                fight = true;
                fightSystem.SetPlayesFight(this, collision.gameObject.GetComponent<PlayerMovment>());
                 break;
             case "mob":
+                fight = true;
                 fightSystem.SetMobFight(this, collision.gameObject.GetComponent<PlayerMovment>());
                 break;
             default:

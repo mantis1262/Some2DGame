@@ -30,6 +30,7 @@ public class TurnSystem : MonoBehaviour
         player.hasTurn = false;
         player.camera.gameObject.SetActive(false);
         player.fog.gameObject.SetActive(false);
+        player.stun = false;
 
         currentPlayer++;
         if (currentPlayer >= players.Length)

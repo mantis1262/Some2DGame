@@ -21,10 +21,20 @@ public class FightSystem : MonoBehaviour
     const string WEP =  "Weapon: ";
     const string DICE = "Dice: ";
 
+    int ValueAll1 = 0;
+    int ValueAll2 = 0;
+
+    PlayerMovment char1;
+    PlayerMovment char2;
+    PlayerMovment mob;
+
 
 
     public void SetPlayesFight(PlayerMovment char1, PlayerMovment char2)
     {
+        this.char1 = char1;
+        this.char2 = char2;
+
         gameObject.SetActive(true);
 
         name1Text.text = char1.name;
@@ -38,23 +48,50 @@ public class FightSystem : MonoBehaviour
 
         int ran2 = Random.Range(0, 10);
         dice2Text.text = DICE + ran2.ToString();
+
+        ValueAll1 += char1.strenght + ran;
+        ValueAll2 += char2.strenght + ran2;
+
+        if(ValueAll1 > ValueAll2)
+        {
+            char2.stun = true;
+        } else if(ValueAll2 > ValueAll1)
+        {
+            char1.stun = true;
+
+        }
+
     }
 
     public void SetMobFight(PlayerMovment char1, PlayerMovment char2)
     {
+        this.char1 = char1;
+        this.mob = char2;
         gameObject.SetActive(true);
 
         name1Text.text = char1.name;
         name2Text.text = char2.name;
 
-       // str1Text.text = STR + char1.strenght.ToString();
-        //str2Text.text = STR + char2.strenght.ToString();
+        str1Text.text = STR + char1.strenght.ToString();
+        str2Text.text = STR + char2.strenght.ToString();
 
         int ran = Random.Range(0, 10);
         dice1Text.text = DICE + ran.ToString();
 
         int ran2 = Random.Range(0, 10);
         dice2Text.text = DICE + ran2.ToString();
+
+        ValueAll1 += char1.strenght + ran;
+        ValueAll2 += char2.strenght + ran2;
     }
 
+
+    public void CloseFight()
+    {
+        this.gameObject.SetActive(false);
+        ValueAll1 = 0;
+        ValueAll2 = 0;
+        char1.fight = false;
+        char2.fight = false;
+    }
 }
