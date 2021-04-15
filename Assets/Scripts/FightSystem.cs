@@ -26,7 +26,7 @@ public class FightSystem : MonoBehaviour
 
     PlayerMovment char1;
     PlayerMovment char2;
-    PlayerMovment mob;
+    Mobs mob;
 
 
 
@@ -63,7 +63,7 @@ public class FightSystem : MonoBehaviour
 
     }
 
-    public void SetMobFight(PlayerMovment char1, PlayerMovment char2)
+    public void SetMobFight(PlayerMovment char1, Mobs char2)
     {
         this.char1 = char1;
         this.mob = char2;
@@ -73,16 +73,27 @@ public class FightSystem : MonoBehaviour
         name2Text.text = char2.name;
 
         str1Text.text = STR + char1.strenght.ToString();
-        str2Text.text = STR + char2.strenght.ToString();
+        str2Text.text = STR + char2.STR.ToString();
 
         int ran = Random.Range(0, 10);
         dice1Text.text = DICE + ran.ToString();
 
-        int ran2 = Random.Range(0, 10);
+        int ran2 = Random.Range(0, char2.maxDice);
         dice2Text.text = DICE + ran2.ToString();
 
         ValueAll1 += char1.strenght + ran;
-        ValueAll2 += char2.strenght + ran2;
+        ValueAll2 += char2.STR + ran2;
+
+        if (ValueAll1 > ValueAll2)
+        {
+            Destroy(char2.gameObject);
+        }
+        else if (ValueAll2 > ValueAll1)
+        {
+            char1.stun = true;
+            char1.currentEnergy = 0;
+
+        }
     }
 
 
@@ -92,6 +103,14 @@ public class FightSystem : MonoBehaviour
         ValueAll1 = 0;
         ValueAll2 = 0;
         char1.fight = false;
-        char2.fight = false;
+        if (char2 != null)
+        {
+            char2.fight = false;
+            char2 = null;
+        }
+        if (mob != null)
+        {
+            mob = null;
+        }
     }
 }

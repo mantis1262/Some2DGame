@@ -112,7 +112,7 @@ public class PlayerMovment : MonoBehaviour
                 break;
             case "mob":
                 fight = true;
-                fightSystem.SetMobFight(this, collision.gameObject.GetComponent<PlayerMovment>());
+                fightSystem.SetMobFight(this, collision.gameObject.GetComponent<Mobs>());
                 break;
             default:
                 break;
@@ -123,9 +123,9 @@ public class PlayerMovment : MonoBehaviour
     private void UpdateFog()
     {
         Vector3Int currentPosition = fog.WorldToCell(transform.position);
-        for (int i = -3; i <= 3; i++)
+        for (int i = -vision; i <= vision; i++)
         {
-            for (int j = -3; j <= 3; j++)
+            for (int j = -vision; j <= vision; j++)
             {
                 fog.SetTile(currentPosition + new Vector3Int(i, j, 0), null);
             }
