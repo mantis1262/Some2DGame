@@ -12,18 +12,6 @@ public class TurnSystem : MonoBehaviour
 
     public int currentPlayer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void EndTurn()
     {
         PlayerMovment player = players[currentPlayer];
@@ -31,6 +19,8 @@ public class TurnSystem : MonoBehaviour
         player.camera.gameObject.SetActive(false);
         player.fog.gameObject.SetActive(false);
         player.stun = false;
+        if (player.currentQuest != null)
+            player.currentQuest.EndTurn();
 
         currentPlayer++;
         if (currentPlayer >= players.Length)
@@ -45,6 +35,8 @@ public class TurnSystem : MonoBehaviour
         player.camera.gameObject.SetActive(true);
         player.fog.gameObject.SetActive(true);
         player.currentEnergy = players[currentPlayer].maxEnergy;
+        if (player.currentQuest != null)
+            player.currentQuest.StartTurn();
         if (player.stun == true)
             player.currentEnergy = 0;
         player.energy.text = "Energy: " + player.currentEnergy + "/" + player.maxEnergy;

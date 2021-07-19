@@ -43,14 +43,20 @@ public class FightSystem : MonoBehaviour
         str1Text.text = STR + char1.strenght.ToString();
         str2Text.text = STR + char2.strenght.ToString();
 
+        int weapon1pow = Random.Range(char1.equipWeapon.MinPower, char1.equipWeapon.MaxPower);
+        int weapon2pow = Random.Range(char2.equipWeapon.MinPower, char2.equipWeapon.MaxPower);
+
+        wep1Text.text = WEP + weapon1pow.ToString();
+        wep2Text.text = WEP + weapon2pow.ToString();
+
         int ran = Random.Range(0, 10);
         dice1Text.text = DICE + ran.ToString();
 
         int ran2 = Random.Range(0, 10);
         dice2Text.text = DICE + ran2.ToString();
 
-        ValueAll1 += char1.strenght + ran;
-        ValueAll2 += char2.strenght + ran2;
+        ValueAll1 += char1.strenght + weapon1pow + ran;
+        ValueAll2 += char2.strenght + weapon2pow + ran2;
 
         if(ValueAll1 > ValueAll2)
         {
@@ -74,6 +80,9 @@ public class FightSystem : MonoBehaviour
 
         str1Text.text = STR + char1.strenght.ToString();
         str2Text.text = STR + char2.STR.ToString();
+
+        int weapon1pow = Random.Range(char1.equipWeapon.MinPower, char1.equipWeapon.MaxPower);
+        wep1Text.text = WEP + weapon1pow.ToString();
 
         int ran = Random.Range(0, 10);
         dice1Text.text = DICE + ran.ToString();

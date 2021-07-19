@@ -16,6 +16,16 @@ public class GoTo : Quest
 
     public override void CompletedQuest(PlayerMovment player)
     {
-        player.backpack.Add(reward);
+        player.Inventory.Add(reward);
+    }
+
+    public override void EndTurn()
+    {
+        Aim.SetActive(false);
+    }
+
+    public override void StartTurn()
+    {
+        Aim.SetActive(true);
     }
 }

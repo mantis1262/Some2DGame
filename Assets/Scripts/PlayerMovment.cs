@@ -22,7 +22,8 @@ public class PlayerMovment : MonoBehaviour
     public int maxEnergy = 5;
     public int currentEnergy = 5;
     public Quest currentQuest = null;
-    public List<GameObject> backpack;
+    public List<Iteam> Inventory;
+    public Weapon equipWeapon;
     public int strenght = 5;
     public bool stun = false;
     public bool fight = false;
