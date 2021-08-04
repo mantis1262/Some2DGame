@@ -16,7 +16,7 @@ public class GoTo : Quest
 
     public override void CompletedQuest(PlayerMovment player)
     {
-        player.Inventory.Add(reward);
+        player.inventory.Add(reward);
     }
 
     public override void EndTurn()

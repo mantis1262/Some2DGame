@@ -7,4 +7,5 @@ public class Mobs : MonoBehaviour
     public string name;
     public int STR;
     public int maxDice = 1;
+    public int moneyReward;
 }

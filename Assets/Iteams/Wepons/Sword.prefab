@@ -94,6 +94,8 @@ MonoBehaviour:
   type: 0
   MinPower: 0
   MaxPower: 10
+  nameText: {fileID: 652809244782313334}
+  powerText: {fileID: 652809245670488366}
 --- !u!1 &652809244782313224
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +174,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: Sword
 --- !u!1 &652809245670488352
 GameObject:
   m_ObjectHideFlags: 0

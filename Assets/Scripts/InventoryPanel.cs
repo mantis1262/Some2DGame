@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryPanel : MonoBehaviour
 {
-    List<Iteam> iteams;
+
+    public Text moneyValue;
+    public ScrollRect scrollContent;
+
    public void OpenInventory()
     {
         this.gameObject.SetActive(true);

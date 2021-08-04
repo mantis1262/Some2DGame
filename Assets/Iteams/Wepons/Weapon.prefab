@@ -252,3 +252,5 @@ MonoBehaviour:
   type: 0
   MinPower: 0
   MaxPower: 0
+  nameText: {fileID: 6270502575872133506}
+  powerText: {fileID: 6270502575655047130}

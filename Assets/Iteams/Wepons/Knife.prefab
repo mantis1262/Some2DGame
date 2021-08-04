@@ -157,7 +157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: Knife
 --- !u!1 &6871100686560913826
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,3 +252,5 @@ MonoBehaviour:
   type: 0
   MinPower: 4
   MaxPower: 6
+  nameText: {fileID: 6871100686030893898}
+  powerText: {fileID: 6871100685274903826}

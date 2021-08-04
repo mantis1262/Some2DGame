@@ -15,6 +15,7 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] private int vision = 3;
     [SerializeField] private QuestSystem quest;
     [SerializeField] private FightSystem fightSystem;
+    public GameObject inventoryContent;
     public Tilemap fog;
     public Camera camera;
     public Text energy;
@@ -22,11 +23,12 @@ public class PlayerMovment : MonoBehaviour
     public int maxEnergy = 5;
     public int currentEnergy = 5;
     public Quest currentQuest = null;
-    public List<Iteam> Inventory;
+    public List<Iteam> inventory;
     public Weapon equipWeapon;
     public int strenght = 5;
     public bool stun = false;
     public bool fight = false;
+    public int money;
 
     private void Start()
     {

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TurnSystem : MonoBehaviour
 {
 
+    [SerializeField] private InventoryPanel inventoryPanel;
     [SerializeField] private PlayerMovment[] players;
     [SerializeField] private int turnNumber = 0;
     [SerializeField] private Text turnNumberText;
@@ -18,6 +19,7 @@ public class TurnSystem : MonoBehaviour
         player.hasTurn = false;
         player.camera.gameObject.SetActive(false);
         player.fog.gameObject.SetActive(false);
+        player.inventoryContent.SetActive(false);
         player.stun = false;
         if (player.currentQuest != null)
             player.currentQuest.EndTurn();
@@ -34,6 +36,8 @@ public class TurnSystem : MonoBehaviour
         player.hasTurn = true;
         player.camera.gameObject.SetActive(true);
         player.fog.gameObject.SetActive(true);
+        player.inventoryContent.SetActive(true);
+        inventoryPanel.scrollContent.content = player.inventoryContent.GetComponent<RectTransform>();
         player.currentEnergy = players[currentPlayer].maxEnergy;
         if (player.currentQuest != null)
             player.currentQuest.StartTurn();
