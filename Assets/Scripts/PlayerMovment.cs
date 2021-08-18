@@ -12,12 +12,12 @@ public class PlayerMovment : MonoBehaviour
     private bool hasMoved;
    
 
-    [SerializeField] private int vision = 3;
+  //  [SerializeField] private int vision = 3;
     [SerializeField] private QuestSystem quest;
     [SerializeField] private FightSystem fightSystem;
     public GameObject inventoryContent;
-    public Tilemap fog;
-    public Camera camera;
+   // public Tilemap fog;
+   // public Camera camera;
     public Text energy;
     public bool hasTurn;
     public int maxEnergy = 5;
@@ -32,7 +32,6 @@ public class PlayerMovment : MonoBehaviour
 
     private void Start()
     {
-        UpdateFog();
     }
 
     void Update()
@@ -88,7 +87,6 @@ public class PlayerMovment : MonoBehaviour
         currentEnergy--;
         energy.text = "Energy: " + currentEnergy + "/" + maxEnergy;
         transform.position += direction;
-        UpdateFog();
         if (currentQuest != null)
             if (currentQuest.CheckQuest(this))
             {
@@ -102,6 +100,8 @@ public class PlayerMovment : MonoBehaviour
         {
             case "obs":
                 transform.position -= direction;
+                currentEnergy++;
+                energy.text = "Energy: " + currentEnergy + "/" + maxEnergy;
                 break;
             case "city":
                 quest.SetQuestWinow(this);
@@ -123,16 +123,16 @@ public class PlayerMovment : MonoBehaviour
         }
     }
 
-    private void UpdateFog()
-    {
-        Vector3Int currentPosition = fog.WorldToCell(transform.position);
-        for (int i = -vision; i <= vision; i++)
-        {
-            for (int j = -vision; j <= vision; j++)
-            {
-                fog.SetTile(currentPosition + new Vector3Int(i, j, 0), null);
-            }
-        }
-    }
+    //private void UpdateFog()
+    //{
+    //    Vector3Int currentPosition = fog.WorldToCell(transform.position);
+    //    for (int i = -vision; i <= vision; i++)
+    //    {
+    //        for (int j = -vision; j <= vision; j++)
+    //        {
+    //            fog.SetTile(currentPosition + new Vector3Int(i, j, 0), null);
+    //        }
+    //    }
+    //}
 
 }

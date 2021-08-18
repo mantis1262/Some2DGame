@@ -17,8 +17,8 @@ public class TurnSystem : MonoBehaviour
     {
         PlayerMovment player = players[currentPlayer];
         player.hasTurn = false;
-        player.camera.gameObject.SetActive(false);
-        player.fog.gameObject.SetActive(false);
+      //  player.camera.gameObject.SetActive(false);
+      //  player.fog.gameObject.SetActive(false);
         player.inventoryContent.SetActive(false);
         player.stun = false;
         if (player.currentQuest != null)
@@ -34,8 +34,8 @@ public class TurnSystem : MonoBehaviour
 
         player = players[currentPlayer];
         player.hasTurn = true;
-        player.camera.gameObject.SetActive(true);
-        player.fog.gameObject.SetActive(true);
+      //  player.camera.gameObject.SetActive(true);
+      //  player.fog.gameObject.SetActive(true);
         player.inventoryContent.SetActive(true);
         inventoryPanel.scrollContent.content = player.inventoryContent.GetComponent<RectTransform>();
         player.currentEnergy = players[currentPlayer].maxEnergy;
