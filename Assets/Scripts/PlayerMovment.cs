@@ -47,7 +47,7 @@ public class PlayerMovment : MonoBehaviour
                 hasMoved = true;
                 MoveByDirection();
             }
-
+            //GetCard();
             velocity = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         }
     }

@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 4252656d7bf8966498024d93451ada23
+guid: 3adc7af6cae996e478f693b944bed38c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2135585597343286014
-    second: Hexagon Pointed-Top
+      213: -6265054668056534801
+    second: bridge_0
+  - first:
+      213: -376147737124152719
+    second: bridge_1
+  - first:
+      213: -8818591403317373605
+    second: bridge_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -35,7 +41,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -44,17 +50,17 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 230
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -91,18 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -118,43 +112,69 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hexagon Pointed-Top
+      name: bridge_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 0
-        width: 226
-        height: 256
+        x: 3
+        y: 178
+        width: 90
+        height: 76
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 128}
-        - {x: -114, y: 66}
-        - {x: -114, y: -66}
-        - {x: -6, y: -128}
-        - {x: 6, y: -128}
-        - {x: 114, y: -66}
-        - {x: 114, y: 66}
-        - {x: 6, y: 128}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20db9eac630ec52e0800000000000000
-      internalID: -2135585597343286014
+      spriteID: fe0661c19fd0e09a0800000000000000
+      internalID: -6265054668056534801
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: -6, y: 128}
-      - {x: -114, y: 66}
-      - {x: -114, y: -66}
-      - {x: -6, y: -128}
-      - {x: 6, y: -128}
-      - {x: 114, y: -66}
-      - {x: 114, y: 66}
-      - {x: 6, y: 128}
+    - serializedVersion: 2
+      name: bridge_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 110
+        width: 90
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17ad5a140a7a7caf0800000000000000
+      internalID: -376147737124152719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bridge_2
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 4
+        width: 71
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5554f177d11e9580800000000000000
+      internalID: -8818591403317373605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
